@@ -1468,6 +1468,9 @@ margin-left: 1px;
 }
 
 @media (max-width: 928px){
+  .textAboutDiv {
+    margin-left: 0;
+  }
   .companyname{
     font-size: 12px;
   }
