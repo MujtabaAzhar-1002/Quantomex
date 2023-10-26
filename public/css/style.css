@@ -1281,7 +1281,12 @@ margin-left: 1px;
   animation-duration: 11s;
 }
 
-
+.w45p{
+  width: 45%;
+}
+.w100p{
+  width: 100% !important;
+}
 
 @keyframes animate {
 
@@ -1456,6 +1461,11 @@ margin-left: 1px;
   }
 }
 
+@media (max-width:970px) {
+ .w45p{
+  width: 55%;
+ }  
+}
 
 @media (max-width: 928px){
   .companyname{
@@ -1621,5 +1631,9 @@ margin-left: 1px;
   .footeremail{
     float: none;
     width: 320px;
+  }
+
+  .w45p{
+    width: 90%;
   }
 } 
