@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quantomex</title>
+  <!------ Font Awesome ------>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!------ Stylesheet ------>
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <!------ Queries ------>
+  <link rel="stylesheet" href="/css/queries.css" />
+<!-- animation -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <!------ Scroll To Top Button ------>
+  <button id="scroll-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  <!------ Header ------>
+  <header>
+
+    <nav>
+      <a href="/" id="logo"><img src="/images/Logo.png" class="navbar-image-width" alt=""></a>
+      <i class="fas fa-bars" id="ham-menu"></i>
+      <ul id="nav-bar">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="#myaboursection">About us</a>
+        </li>
+        <li>
+          <a href="#casestudies12">Case studies</a>
+        </li>
+        <li>
+          <a href="#">Careers</a>
+        </li>
+        <li>
+          <a href="#getintouch">Get in touch</a>
+        </li>
+        <li class="specialNav">
+          <a href="#"> <div class=" liround">
+            <a class="anchorroundtext text" href="/getquote">Get a quote</a>
+          </div></a>
+          
+        </li>
+      </ul>
+    </nav>
+  </header>
+   
+     <!------ Section: Download App ------>
+     <section class="download-app" id="download-app">
+        <h2>Client Review Form</h2>
+        <p class="section-desc">
+        
+        </p>
+        <div class="row" style="display: flex; flex-wrap: wrap;">
+          <div class="w45p" >
+            <img class="w100p" src="/images/demo2.png" />
+          </div>
+          <div class="1 w45p" >
+            <form action="/addClientReview" method="post" enctype="multipart/form-data">
+                <div class="app-feature">
+                  <p>
+                    <input type="text" id="clientName" class="inputtext w100p" name="clientName" placeholder="Client Name" required>
+                  </p>
+                </div>
+                <div class="app-feature">
+                  <p>
+                    <select id="rating" name="rating" required>
+                      <option value="1">1 star</option>
+                      <option value="2">2 stars</option>
+                      <option value="3">3 stars</option>
+                      <option value="4">4 stars</option>
+                      <option value="5">5 stars</option>
+                    </select>
+                  </p>
+                </div>
+                <div class="app-feature">
+                  <p>
+                    <textarea id="reviewOfJob" name="reviewOfJob" placeholder="Job Feedback" class="inputtext w100p" rows="4" style="resize: none;" required></textarea>
+                  </p>
+                </div>
+                <div class="app-feature">
+                  <p>
+                    <label for="image">Upload Client Image</label>
+                    <input type="file" id="image" class="inputtext w100p" name="image" accept="image/*" required>
+                  </p>
+                </div>
+                <div class="roundbg">
+                  <p>
+                    <button style="background-color: transparent; border: none; padding-left: 0px; margin-left: -10px;" class="anchorroundtext" type="submit">Submit</button>
+                  </p>
+                </div>
+              </form>
+         
+          </div>
+        </div>
+      </section>
+ 
+  <!------ Footer ------>
+  <div style="background-color: #222222;" id="getintouch">
+    <div class="rowfooter">
+      <div class="colimn1">
+        <img src="/images/Logo.png" class="footerlogo" alt="">
+        <p class="footertext">"Quantomex is your trusted partner for digital innovation. With a passion for excellence, we craft tailored solutions that elevate your online presence, ensuring your success in the digital landscape."
+        </p>
+      </div>
+      <div class="colimn2">
+        <h3 class="headingfooter">Links</h3>
+        <div class="col-link">
+        <div class="rowinner">
+          <img src="/images/Ok.png" alt="">
+          <a href="#myaboursection">About us</a>
+        </div>
+        <div class="rowinner">
+          <img src="/images/Ok.png" alt="">
+          <a href="#getintouch">Contact us</a>
+        </div>
+        <div class="rowinner">
+          <img src="/images/Ok.png" alt="">
+          <a href="#">Career</a>
+        </div>
+        <div class="rowinner">
+          <img src="/images/Ok.png" alt="">
+          <a href="#casestudies12">Case studies</a>
+        </div>
+        <div class="rowinner">
+          <img src="/images/Ok.png" alt="">
+          <a href="#getintouch">Get a quote</a>
+        </div>
+        </div>
+      </div>
+      <div class="colimn3">
+        <h3 class="headingfooter">Contact info</h3>
+        <div class="col-link1">
+
+          <div class="rowinner1">
+            <img src="/images/phone.png" alt="">
+            <span>+1 (816) 284-8217</span>
+          </div>
+          <div class="rowinner1">
+            <img style="height: 41px;" src="/images/location.png" alt="">
+            <span>50 diaz street iselin woodbridge township, New Jersey</span>
+          </div>
+          <div class="rowinner1">
+            <img src="/images/email.png" alt="">
+            <span>operations@quantomex.com</span>
+          </div>
+        </div>
+        </div>
+    </div>
+    <div class="rowfooter w-100" > 
+      <div class="linkstag">
+      <a href="" class="linkstags">Facebook</a>
+      <a href="" class="linkstags">Instagram</a>
+      <a href="https://www.linkedin.com/company/quantomex.com/mycompany/verification/" target="_blank" class="linkstags">Linkedin</a>
+    </div>
+    <div class="emial-footer">
+      <input type="text" class="footeremail" placeholder="Enter your email">
+    </div>
+    </div>
+<div class="greyline"> </div>
+<div> <p class="companyname">© Quantomex. All Rights Reserved</p></div>
+  </div>
+
+  <!------ Script ------>
+  <script src="/js/script.js"></script>
+</body>
+
+</html>
+<script>
+  AOS.init();
+
+  var a = 0;
+$(window).scroll(function() {
+
+  var oTop = $('#counter').offset().top - window.innerHeight;
+  if (a == 0 && $(window).scrollTop() > oTop) {
+    $('.counter-value').each(function() {
+      var $this = $(this),
+        countTo = $this.attr('data-count');
+      $({
+        countNum: $this.text()
+      }).animate({
+          countNum: countTo
+        },
+
+        {
+
+          duration: 2000,
+          easing: 'swing',
+          step: function() {
+            $this.text(Math.floor(this.countNum));
+          },
+          complete: function() {
+            $this.text(this.countNum);
+            //alert('finished');
+          }
+
+        });
+    });
+    a = 1;
+  }
+
+});
+</script>

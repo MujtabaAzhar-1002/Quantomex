@@ -11,20 +11,24 @@ const { storage } = require('../cloudinary/index');
 const upload = multer({ storage });
 
 // Get Client Reviews Page
-router.get('/admin/client-reviews', isAdmin, async (req, res) => {
-  const reviews = await ClientReview.find();
-  res.render('./admin/clientReviews', { reviews });
+router.get('/client-reviews', async (req, res) => {
+ 
+  res.render('./admin/clientReviews');
 });
-
+// Get Client Reviews Page
+router.get('/admin/client-reviews', isAdmin, async (req, res) => {
+  const clientReviewSubmissions = await ClientReview.find();
+  res.render('./admin/clientReviewsSubmissions', { clientReviewSubmissions });
+});
 // Add Client Review
-router.post('/addClientReview', upload.single('image'), isAdmin, async (req, res) => {
+router.post('/addClientReview', upload.single('image'),  async (req, res) => {
   try {
     const { clientName, rating, reviewOfJob } = req.body;
     const image = req.file ? req.file.path : '';
     const review = new ClientReview({ image, clientName, rating, reviewOfJob });
     await review.save();
     req.flash('success', 'Client review added successfully');
-    res.redirect('/admin/client-reviews');
+    res.redirect('/client-reviews');
   } catch (error) {
     console.error('Error adding Client Review:', error);
     req.flash('error', 'Error adding Client Review');

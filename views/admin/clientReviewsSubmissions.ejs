@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Client Review Submissions</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/OpForm.css">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <% include('../partials/flash.ejs') %>
+  <% if (clientReviewSubmissions.length > 0) { %>
+    <table>
+      <thead>
+        <tr>
+          <a style="margin-top: 20px;" href="/admin/client-reviews"><button>Back</button></a>
+          <th>Client Review Submissions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% clientReviewSubmissions.forEach((submission, index) => { %>
+        <tr>
+          <td><strong>Submission <%= index + 1 %></strong></td>
+        </tr>
+        <tr>
+          <td><strong>Client Name:</strong> <%= submission.clientName %></td>
+        </tr>
+        <tr>
+            <td><strong>Rating:</strong>
+              <% for (let i = 0; i < submission.rating; i++) { %>
+                <span style="color: goldenrod;" class="fa fa-star checked"></span>
+              <% } %>
+            </td>
+          </tr>
+        <tr>
+          <td><strong>Review of Job:</strong> <%= submission.reviewOfJob %></td>
+        </tr>
+        <tr>
+          <td>
+            <form action="/deleteClientReview/<%= submission._id %>" method="POST">
+              <button type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+  <p>No Client Review submissions available.</p>
+  <% } %>
+</div>
+</body>
+</html>
