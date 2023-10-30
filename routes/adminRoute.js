@@ -39,7 +39,7 @@ router.get('/admin/login', (req, res) => {
 
 router.post('/admin/login', passport.authenticate('admin', {
   failureRedirect: '/admin/login',
-  failureFlash: true
+  failureFlash: {type: 'error', message: 'Invalid Username/Password'}
 }), (req, res) => {
    req.flash('success', 'Welcome back, admin!');
   

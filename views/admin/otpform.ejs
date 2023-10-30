@@ -1,0 +1,32 @@
+<!-- index.html -->
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, 
+                    initial-scale=1.0" /> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
+    <title>OTP Input</title> 
+    <link rel="stylesheet" href="/css/otpform.css" /> 
+   
+</head> 
+
+<body> 
+    <div class="container"> 
+        <div id="inputs" class="inputs"> 
+           
+            <form method="post" action="/testOtp"> <!-- Set the action to call /testOtp -->
+                <input class="input" type="text" inputmode="numeric" maxlength="1" name="digit1" required /> 
+                <input class="input" type="text" inputmode="numeric" maxlength="1" name="digit2" required /> 
+                <input class="input" type="text" inputmode="numeric" maxlength="1" name="digit3" required /> 
+                <input class="input" type="text" inputmode="numeric" maxlength="1" name="digit4" required /> 
+                <br><br>
+                <button class="center-button" type="submit">Verify</button>
+            </form>
+        </div> 
+    </div> 
+    <script src="/js/otp.js"></script> 
+</body> 
+
+</html>
