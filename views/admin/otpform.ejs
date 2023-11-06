@@ -1,32 +1,37 @@
-<!-- index.html -->
-<!DOCTYPE html> 
-<html lang="en"> 
+<!DOCTYPE html>
+<html lang="en">
 
-<head> 
-    <meta charset="UTF-8" /> 
-    <meta name="viewport" content="width=device-width, 
-                    initial-scale=1.0" /> 
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
-    <title>OTP Input</title> 
-    <link rel="stylesheet" href="/css/otpform.css" /> 
-   
-</head> 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>OTP Input</title>
+ 
+</head>
 
-<body> 
-    <div class="container"> 
-        <div id="inputs" class="inputs"> 
-           
-            <form method="post" action="/testOtp"> <!-- Set the action to call /testOtp -->
-                <input class="input" type="text" inputmode="numeric" maxlength="1" name="digit1" required /> 
-                <input class="input" type="text" inputmode="numeric" maxlength="1" name="digit2" required /> 
-                <input class="input" type="text" inputmode="numeric" maxlength="1" name="digit3" required /> 
-                <input class="input" type="text" inputmode="numeric" maxlength="1" name="digit4" required /> 
+<body>
+    <form action="/sendOtp" method="post" > <!-- Set the action to call /sendOtp -->
+        <label for="email">Enter your email to receive OTP:</label>
+        <input  type="text" id="email" name="email" required />
+        <br><br>
+        <button class="center-button" type="submit">Send OTP</button>
+        <p>If you can't find email in your inbox please check the spam folder!!!</p>
+    </form>
+    <div class="container">
+        <div id="inputs" class="inputs">
+            
+            <form action="/testOtp" method="post" > <!-- Set the action to call /verifyOtp -->
+                <label for="otp">Enter the OTP sent to your email:</label>
+                <input class="input" type="text" inputmode="numeric" maxlength="1" name="digit1" required />
+                <input class="input" type="text" inputmode="numeric" maxlength="1" name="digit2" required />
+                <input class="input" type="text" inputmode="numeric" maxlength="1" name="digit3" required />
+                <input class="input" type="text" inputmode="numeric" maxlength="1" name="digit4" required />
                 <br><br>
                 <button class="center-button" type="submit">Verify</button>
             </form>
-        </div> 
-    </div> 
-    <script src="/js/otp.js"></script> 
-</body> 
+        </div>
+    </div>
+    <script src="/js/otp.js"></script>
+</body>
 
 </html>
