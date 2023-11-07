@@ -26,14 +26,14 @@ router.post('/submit', async (req, res) => {
       });
       await formEntry.save();
 
-      // Create the email data object for the user
+ 
       const userEmailData = {
-          FromEmail: 'operations@quantomex.com', // Set your email as the sender
+          FromEmail: 'operations@quantomex.com', 
           FromName: 'Quantomex',
           Recipients: [
               {
-                  Email: email, // Use the user's email address from the form
-                  Name: fullName, // Use the user's name
+                  Email: email, 
+                  Name: fullName, 
               },
           ],
           Subject: 'Your Quotation Submission',
@@ -60,7 +60,7 @@ router.post('/submit', async (req, res) => {
           FromName: 'Quantomex',
           Recipients: [
               {
-                  Email: 'shaanemustafa8@gmail.com', // Set the admin's email address
+                  Email: 'operations@quantomex.com', // Set the admin's email address
                   Name: 'Admin',
               },
           ],
