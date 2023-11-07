@@ -4,6 +4,7 @@ const passport = require('passport');
 const Admin = require('../models/Admin');
 const CaseStudy = require('../models/caseStudyModel');
 const Team = require('../models/teamModel');
+const ClientReview = require("../models/clientReviewModel");
 const Domain = require('../models/domainModel');
 const {isAdmin} = require('../middleware/isAdmin');
 // Admin Signup
@@ -69,8 +70,9 @@ router.get('/', async (req, res) => {
       domainCounts[domainName] = count;
     }
     const teamMembers = await Team.find();
-    // Render the homepage with case studies and domain counts
-    res.render('./pages/homepage', { caseStudies, domainCounts, teamMembers});
+    const cr = await ClientReview.find();
+        // Render the homepage with case studies and domain counts
+    res.render('./pages/homepage', { caseStudies, domainCounts, teamMembers, cr});
   } catch (error) {
     console.error('Error fetching case studies:', error);
     res.status(500).json({ message: 'Error fetching case studies', error: error.message });

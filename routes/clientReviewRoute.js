@@ -83,12 +83,22 @@ router.post("/testOtp", (req, res) => {
     error: "Invalid OTP. Please enter the correct OTP.",
   });
 });
-
+// Middleware to check for OTP
+function checkOTP(req, res, next) {
+  if (req.session.otp) {
+    // OTP is present, continue to the next middleware or route handler
+    next();
+  } else {
+    // OTP is not present, redirect the user to the OTP form
+    res.redirect('/otpform');
+  }
+}
 // Get Client Reviews Page
-router.get("/client-reviews", async (req, res) => {
+router.get("/client-reviews", checkOTP, async (req, res) => {
   res.render("./admin/clientReviews");
 });
-// Get Client Reviews Page
+
+// View Reviews on Admin Page
 router.get("/admin/client-reviews", isAdmin, async (req, res) => {
   const clientReviewSubmissions = await ClientReview.find();
   res.render("./admin/clientReviewsSubmissions", { clientReviewSubmissions });

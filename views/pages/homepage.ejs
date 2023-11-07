@@ -297,63 +297,25 @@
     <div class="underheading"></div>
     <div class="Glimpseround-row">
       <div class="clientcolumn">
+        <% for (let i = 0; i < cr.length; i++) { %>
         <div class="Glimpse_inerdev">
-          <i class="fas fa-star stars mg-left20"></i>
-          <i class="fas fa-star stars"></i>
-          <i class="fas fa-star stars"></i>
-          <i class="fas fa-star stars"></i>
-          <i class="fas fa-star stars"></i>
+          <% for (let j = 0; j < cr[i].rating; j++) { %>
+            <i class="fas fa-star stars mg-left20"></i>
+          <% } %>
           <p>
-            "Working with Quantomex has been an absolute game-changer for our business. Their team not only delivered a visually stunning website but also ensured it was highly functional and user-friendly. They truly understood our needs and delivered beyond our expectations. Quantomex is the go-to choice for digital excellence!"
+            "<%= cr[i].reviewOfJob %>"
           </p>
           <div class="triangleclient">
             <img src="/images/triangle.png" alt="">
           </div>
         </div>
         <div class="imagecllient">
-          <img src="/images/client.png"  alt="">
-          <span>David Anderson</span>
+          <img src="<%= cr[i].image %>" alt="">
+          <span><%= cr[i].clientName %></span>
         </div>
-      </div>
-      <div class="clientcolumn">
-        <div class="Glimpse_inerdev">
-          <i class="fas fa-star stars mg-left20"></i>
-          <i class="fas fa-star stars"></i>
-          <i class="fas fa-star stars"></i>
-          <i class="fas fa-star stars"></i>
-          <i class="fas fa-star stars"></i>
-          <p>
-            "Quantomex transformed our outdated website into a modern masterpiece. Their attention to detail during the Requirement Gathering phase was impressive. They took the time to understand our business goals, and it reflected in the final product. We've seen a significant increase in traffic and conversions since the new site went live."
-          </p>
-          <div class="triangleclient">
-            <img src="/images/triangle.png" alt="">
-          </div>
-        </div>
-        <div class="imagecllient">
-          <img src="/images/client.png"  alt="">
-          <span>Emma Johnson</span>
-        </div>
-      </div>
-      <div class="clientcolumn">
-        <div class="Glimpse_inerdev">
-          <i class="fas fa-star stars mg-left20"></i>
-          <i class="fas fa-star stars"></i>
-          <i class="fas fa-star stars"></i>
-          <i class="fas fa-star stars"></i>
-          <i class="fas fa-star stars"></i>
-        
-          <p>
-            "We approached Quantomex for a custom software solution, and they delivered a tailored product that streamlined our operations. Their development team worked closely with us, ensuring all our specific requirements were met. The ongoing support and maintenance have been exceptional. Quantomex has become a valued partner in our digital journey."
-          </p>
-          <div class="triangleclient">
-            <img src="/images/triangle.png" alt="">
-          </div>
-        </div>
-        <div class="imagecllient">
-          <img src="/images/client.png"  alt="">
-          <span>Sarah Patel</span>
-        </div>
-      </div>
+      <% } %>
+      
+ 
     </div>
 
   </section>
@@ -551,7 +513,19 @@
 <div class="greyline"> </div>
 <div> <p class="companyname">© Quantomex. All Rights Reserved</p></div>
   </div>
-
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6549f655f2439e1631ec7fa6/1hekekfri';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
   <!------ Script ------>
   <script src="/js/script.js"></script>
 </body>
